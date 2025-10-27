@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+  <title>Analyze & Match Your Resume With AI</title>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="nav__header" id="home">
+        <div class="nav__logo">
+          <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" />
+          </a>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="/login" class="btnLogin">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header class="section__container header__container">
+      <div class="header__content">
+        <h1>
+          Analyze & Match <br />
+          Your Resume <br />
+          With ML
+        </h1>
+        <p class="section__description">
+          Effortlessly optimize your resume for any job with our ML-powered analyzer and matching tool.
+        </p>
+        <div class="header__btns">
+          <a href="/login" class="btn">Get Started</a>
+        </div>
+      </div>
+      <div class="header__image">
+        <img src="{{ url_for('static', filename='images/photo-1.png') }}" alt="Header Image" />
+      </div>
+    </header>
+
+    <section class="section__container section__containers">
+      <div class="section__content">
+        <h1>Resume Analyzer & Matching</h1>
+        <hr style="color: #cde0f3; width: 20%; height: 10%;" />
+        <p class="section__p">
+          Get instant insights, keyword suggestions, and formatting tips to boost your job prospects. Match your resume against any job description and get a score to see how well you fit. Try it now!
+        </p>
+        <div class="header__btns">
+          <a
+            href="/login"
+            class="btn"
+            style="
+              background: #0278ea;
+              color: white;
+              box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05),
+                0 4px 10px 0 rgba(0, 0, 0, 0.19);
+            "
+          >
+            Analyze & Match
+          </a>
+        </div>
+      </div>
+      <div class="section__image section__image-right">
+        <img src="{{ url_for('static', filename='images/photo-3.webp') }}" alt="Resume Analyzer and Matching Image" />
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

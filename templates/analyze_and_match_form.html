@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume Analyzer & Matcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/analyze_and_match.css') }}" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">Smart Resume Analysis</div>
+    <p class="card-subheader">Upload your resume and a job description to get a comprehensive analysis and match score.</p>
+    <form method="POST" action="{{ url_for('analyze_and_match') }}" enctype="multipart/form-data" novalidate>
+      <label for="job_description">Job Description</label>
+      <textarea
+       id="job_description"
+       name="job_description"
+       rows="5"
+       placeholder="Paste the job description here..."
+       required
+     >{{ request.form.job_description or '' }}</textarea>
+
+     <label for="resume">Upload Your Resume</label>
+      <small>Supported formats: PDF, DOCX</small>
+      <input
+        type="file"
+        id="resume"
+        name="resume"
+        required
+        accept=".pdf,.docx"
+      />
+      <button type="submit">Analyze & Match</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}" class="back-link">Back to Dashboard</a>
+  </div>
+</body>
+</html>
